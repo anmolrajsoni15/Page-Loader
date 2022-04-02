@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    background: black;
+    animation: change 6s infinite;
+}
+@keyframes change{
+    0%{
+        background: black;
+    }
+    25%{
+        background: #200523;
+    }
+    50%{
+        background: #0b2b2d;
+    }
+    75%{
+        background: #152306;
+    }
+    100%{
+        background: black;
+    }
+}
+
+.container .ring{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: -30px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0);
+    border-top: 6px solid #24ecff;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.container .ring::before{
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background: #24ecff;
+    box-shadow: 0 0 0 6px #24ecff33,
+                0 0 0 12px #24ecff22,
+                0 0 0 24px #24ecff11;
+}
+
+.container .ring:nth-child(2){
+    animation: animate2 4s linear infinite;
+    animation-delay: -1s;
+    border-top: 6px solid transparent;
+    border-left: 6px solid #93ff2d;
+}
+
+.container .ring:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    top: initial;
+    bottom: 12px;
+    left: 12px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background: #93ff2d;
+    box-shadow: 0 0 0 6px #93ff2d33,
+                0 0 0 12px #93ff2d22,
+                0 0 0 24px #93ff2d11;
+}
+
+@keyframes animate2{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.container .ring:nth-child(3){
+    position: absolute;
+    top: -66.66px;
+    animation: animate2 4s linear infinite;
+    animation-delay: -3s;
+    border-top: 6px solid transparent;
+    border-left: 6px solid #e11cf8;
+}
+
+.container .ring:nth-child(3)::before{
+    content: "";
+    position: absolute;
+    top: initial;
+    bottom: 12px;
+    left: 12px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background: #e11cf8;
+    box-shadow: 0 0 0 6px #e11cf833,
+                0 0 0 12px #e11cf822,
+                0 0 0 24px #e11cf811;
+}
+
+p{
+    position: absolute;
+    color: aliceblue;
+    font-size: 1.5em;
+    font-family: consolas;
+    font-weight: bolder;
+    bottom: 100px;
+    letter-spacing: 0.15em;
+}
